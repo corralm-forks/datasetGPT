@@ -89,8 +89,10 @@ class ConversationsGenerator(DatasetGenerator):
         ])
 
         memory = ConversationBufferMemory(return_messages=True)
-        llm = ChatOpenAI(temperature=conversation_config["temperature"],
-                         openai_api_key=self.config.openai_api_key)
+        llm = ChatOpenAI(
+            model='gpt-3.5-turbo',  # 'gpt-4',
+            temperature=conversation_config["temperature"],
+            openai_api_key=self.config.openai_api_key)
         chain = ConversationChain(memory=memory, prompt=prompt, llm=llm)
 
         return chain, system_message
