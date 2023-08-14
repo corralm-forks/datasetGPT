@@ -1,0 +1,21 @@
+topics = {
+    # 1: "A Lost Avocado",
+    # 2: "The Existential Crisis of a Robot Vacuum Cleaner",
+    # 3: "The Great Sock Disappearance Mystery",
+    # 4: "A Conversation Between Two Virtual Plants",
+    # 5: "The Coffee Cup's Perspective on Morning Routines",
+    # 6: "The Secret Lives of Emojis",
+    # 7: "A Day in the Life of a Lost Umbrella",
+    # 8: "The Dance of Two AI-Generated Paintings",
+    # 9: "The Sentiments of a Virtual Pet",
+    # 10: "The Ant's Perspective on a Picnic",
+    # 11: "Travelogue of a Paperclip",
+    # 12: "Musings of a Forgotten Bookmark",
+    # 13: "The Rebellion of Left Shoes",
+    # 14: "A Love Story Between Two Algorithms",
+    # 15: "The Adventures of a Runaway Shopping Cart",
+    16: "Creativity and Inspiration",
+    17: "Challenges and Triumphs",
+    18: "What is consciousness?",
+    
+}
