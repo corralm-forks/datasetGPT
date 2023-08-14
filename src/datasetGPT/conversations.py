@@ -14,6 +14,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain.schema import SystemMessage
 
 from .base import DatasetGenerator
+from src.typing_effect import print_typing
 
 OPTIONS_CONFIG_KEYS = ["length", "temperature", "initial_utterance"]
 GENERATOR_CONFIG_KEYS = ["lengths", "temperatures", "initial_utterances"]
@@ -61,7 +62,7 @@ class ConversationsGenerator(DatasetGenerator):
         generator_config_keys: List[str] = GENERATOR_CONFIG_KEYS
     ) -> None:
         """Prepare options combinations."""
-        print(self.config.initial_utterances)
+        # print(self.config.initial_utterances)
         super().initialize_options_configs(options_config_keys, generator_config_keys)
 
     def initialize_chain(
@@ -125,12 +126,14 @@ class ConversationsGenerator(DatasetGenerator):
         for _ in range(conversation_config["length"]):
             chain1_out = chain1.predict(input=chain1_inp)
             utterances.append(["agent1", chain1_out])
+            print_typing(chain1_out)
 
             if self.end_phrase_interruption("agent1", chain1_out):
                 break
 
             chain2_out = chain2.predict(input=chain1_out)
             utterances.append(["agent2", chain2_out])
+            print_typing(chain2_out)
 
             if self.end_phrase_interruption("agent2", chain2_out):
                 break
